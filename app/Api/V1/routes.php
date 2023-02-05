@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-//->middleware('auth')
 
 Route::middleware('check-header')->group(function(){
     Route::get('get-me', [App\Api\V1\Controllers\MessageController::class, 'getMe']);

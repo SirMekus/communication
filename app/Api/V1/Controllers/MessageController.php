@@ -24,8 +24,7 @@ class MessageController extends Controller
      *         description="one of the pre-defined User IDs",
      *         required=true,
      *         @OA\Schema(
-     *             type="integer",
-     *             format="int64"
+     *             type="string"
      *         )
      *     ),
      *     @OA\Response(
@@ -50,8 +49,7 @@ class MessageController extends Controller
      *         description="one of the pre-defined User IDs",
      *         required=true,
      *         @OA\Schema(
-     *             type="integer",
-     *             format="int64"
+     *             type="string"
      *         )
      *     ),
      *     @OA\Response(
@@ -103,8 +101,7 @@ class MessageController extends Controller
      *         description="one of the pre-defined User IDs",
      *         required=true,
      *         @OA\Schema(
-     *             type="integer",
-     *             format="int64"
+     *             type="string"
      *         )
      *     ),
      *     @OA\Response(
@@ -129,8 +126,7 @@ class MessageController extends Controller
      *         description="one of the pre-defined User IDs",
      *         required=true,
      *         @OA\Schema(
-     *             type="integer",
-     *             format="int64"
+     *             type="string"
      *         )
      *     ),
      *     @OA\Response(
