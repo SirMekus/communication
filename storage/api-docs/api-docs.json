@@ -62,7 +62,7 @@
                             "schema": {
                                 "properties": {
                                     "chat_id": {
-                                        "description": "id representing a chat or channel",
+                                        "description": "(optional) id representing a chat or channel",
                                         "type": "string"
                                     }
                                 },
@@ -76,7 +76,7 @@
                         "description": "Invalid input or incomplete form entry"
                     },
                     "200": {
-                        "description": "Successful; returns an object containing a link which should be sent to a \n     *                      user to join the group"
+                        "description": "Successful; returns an object containing a link which should be sent to a \n     *                      user to join the channel"
                     }
                 }
             }
@@ -127,7 +127,7 @@
                             "schema": {
                                 "properties": {
                                     "chat_id": {
-                                        "description": "id representing a chat or channel",
+                                        "description": "(optional) id representing a chat or channel",
                                         "type": "string"
                                     },
                                     "message": {

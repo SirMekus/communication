@@ -61,7 +61,7 @@ class MessageController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="Successful; returns an object containing a link which should be sent to a 
-     *                      user to join the group"
+     *                      user to join the channel"
      *     ),
      *     @OA\RequestBody(
      *         description="Input data format",
@@ -71,7 +71,7 @@ class MessageController extends Controller
      *                 type="object",
      *                 @OA\Property(
      *                     property="chat_id",
-     *                     description="id representing a chat or channel",
+     *                     description="(optional) id representing a chat or channel",
      *                     type="string",
      *                 )
      *             )
@@ -149,7 +149,7 @@ class MessageController extends Controller
      *                 type="object",
      *                 @OA\Property(
      *                     property="chat_id",
-     *                     description="id representing a chat or channel",
+     *                     description="(optional) id representing a chat or channel",
      *                     type="string",
      *                 ),
      *                 @OA\Property(
