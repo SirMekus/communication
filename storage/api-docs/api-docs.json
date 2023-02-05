@@ -1,0 +1,154 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Communication API",
+        "description": "API documentation for the supported Telegram BOT features in this project",
+        "contact": {
+            "email": "mekus600@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0",
+        "x-logo": {
+            "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
+        }
+    },
+    "paths": {
+        "/api/get-me": {
+            "get": {
+                "description": "Gets profile of user BOT",
+                "operationId": "2c60a1b97a7420dd75e9c4e609004b46",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "one of the pre-defined User IDs",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful; returns an object containing a User's BOT info"
+                    }
+                }
+            }
+        },
+        "/api/invite-to-channel": {
+            "post": {
+                "description": "Subscribes user to a channel or chat by creating and returning a link through \n     *                  which user can join the channel",
+                "operationId": "437547142b6a66309bd42dd48670b060",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "one of the pre-defined User IDs",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "chat_id": {
+                                        "description": "id representing a chat or channel",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Invalid input or incomplete form entry"
+                    },
+                    "200": {
+                        "description": "Successful; returns an object containing a link which should be sent to a \n     *                      user to join the group"
+                    }
+                }
+            }
+        },
+        "/api/get-update": {
+            "get": {
+                "description": "An alternative to Webhook since Telegram webhook requires HTTPS which is not \n     *                  available on a local development environment",
+                "operationId": "4effb9e9f9033a05c5969308917da441",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "one of the pre-defined User IDs",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful; returns an object containing information on channel where the BOT \n     *                      is present and an Admin"
+                    }
+                }
+            }
+        },
+        "/api/send-message": {
+            "post": {
+                "description": "Send a message to subscribers in a channel",
+                "operationId": "9ab3a1a46a48f0f4b45f64aff169b540",
+                "parameters": [
+                    {
+                        "name": "user-id",
+                        "in": "header",
+                        "description": "one of the pre-defined User IDs",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "chat_id": {
+                                        "description": "id representing a chat or channel",
+                                        "type": "string"
+                                    },
+                                    "message": {
+                                        "description": "The message to be sent to subscribers in a channel",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Invalid input or incomplete form entry"
+                    },
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        }
+    }
+}
